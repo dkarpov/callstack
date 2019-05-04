@@ -1,0 +1,19 @@
+.list {
+  padding: 20px;
+  width: fit-content;
+}
+
+.list-item {
+  font-size: 14px;
+  color: blue;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: yellow;
+}
+
+.list .active-item {
+  background: yellowgreen;
+}
