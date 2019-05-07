@@ -4,6 +4,10 @@ export const initLoadAction = dispatch => {
   fetch("https://fathomless-island-89335.herokuapp.com/app")
     .then(response => response.json())
     .then(data => dispatch({ type: "LIST_LOADED", data }));
+
+  fetch("https://fathomless-island-89335.herokuapp.com/rates")
+    .then(response => response.json())
+    .then(data => dispatch({ type: "APPS_INFO_LOADED", data }));
 };
 
 export const getAppIDInfoAction = (dispatch, id) => {

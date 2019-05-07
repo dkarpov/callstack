@@ -3,12 +3,14 @@ import "../styles/App.css";
 import { List } from "./List";
 import { initLoadAction, getAppIDInfoAction } from "./actions";
 import reducer from "./reducer";
-import { SimpleBarChart, SimpleLineChart } from "./SimpleChart";
+import { SimpleBarChart, SimpleLineChart, SimplePiechart } from "./SimpleChart";
 
 const initialState = {
   isLoading: false,
   appIDList: [],
-  currentAppID: "100697065"
+  currentAppID: null,
+  currentAppData: null,
+  appsData: null
 };
 
 export const App = () => {
@@ -26,12 +28,17 @@ export const App = () => {
         onSelect={getAppInfo}
         selection={state.currentAppID}
       />
-      <SimpleBarChart
-        data={
-          state.currentAppData &&
-          state.currentAppData.filter(item => item.meanSendingRateKbps.length)
-        }
-      />
+
+      <div className="chartHolder">
+        <SimpleBarChart
+          data={
+            state.currentAppData &&
+            state.currentAppData.filter(item => item.meanSendingRateKbps.length)
+          }
+          dataKey="meanSendingRateKbps"
+        />
+        <SimpleLineChart data={state.appsData} dataKey="avgSendingRate" />
+      </div>
     </div>
   );
 };

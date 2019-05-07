@@ -4,9 +4,7 @@ import "../styles/App.css";
 export const List = React.memo(
   ({ list, onSelect, selection }) => (
     <div className="list">
-      <span>
-        List items {list && list.length} {selection}
-      </span>
+      <span>Currently slected appID - {selection ? selection : "none"}</span>
 
       {list &&
         list.map(({ appID }) => (
