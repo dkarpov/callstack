@@ -3,7 +3,7 @@ import "../styles/App.css";
 import { List } from "./List";
 import { initLoadAction, getAppIDInfoAction } from "./actions";
 import reducer from "./reducer";
-import { SimpleBarChart, SimpleLineChart, SimplePiechart } from "./SimpleChart";
+import { SimpleBarChart, SimpleLineChart } from "./SimpleChart";
 
 const initialState = {
   isLoading: false,
